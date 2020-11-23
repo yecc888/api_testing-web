@@ -53,13 +53,13 @@ export const asyncRouterMap = [
         component: () => import('@/views/user/index'),
         meta: {title: '用户管理', icon: 'product-add'}
       },
-      {
-        path: 'updateProduct',
-        name: 'updateProduct',
-        component: () => import('@/views/pms/product/update'),
-        meta: {title: '修改商品', icon: 'product-add'},
-        hidden: true
-      },
+    //   {
+    //     path: 'updateProduct',
+    //     name: 'updateProduct',
+    //     component: () => import('@/views/pms/product/update'),
+    //     meta: {title: '修改商品', icon: 'product-add'},
+    //     hidden: true
+    //   },
       {
         path: 'env',
         name: 'env',

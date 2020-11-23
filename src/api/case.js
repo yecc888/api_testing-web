@@ -77,7 +77,7 @@ export function getaCaseGroupList(params) {
 export function getApiRespList(params) {
     return request({
       url: "/api/getApiResp/",
-      method: "post",
+      method: "get",
       params: params
     });
   }
