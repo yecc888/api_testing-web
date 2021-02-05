@@ -141,14 +141,14 @@
                       effect="dark"
                       placement="top">
             <div slot="content">提示: 接口基本信息不输，<br />可快速测试，但不会保存所有数据！</div>
-            <el-button type="primary" size="medium"
+            <el-button type="primary" size="small"
                        :loading="sendloading"
                        @click="send()">
                 <svg-icon icon-class="send"></svg-icon>
               Send
             </el-button>
           </el-tooltip>
-          <el-button size="medium"
+          <el-button size="small"
                      @click="save()"
                      type="primary">
         <svg-icon icon-class="play"></svg-icon>             

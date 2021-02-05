@@ -141,6 +141,7 @@
                       placement="top">
             <div slot="content">提示: 接口基本信息不输，<br />可快速测试，但不会保存所有数据！</div>
             <el-button type="primary"
+                        size="small"
                        :loading="sendloading"
                        @click="send()"><i>
                 <svg-icon icon-class="send"></svg-icon>
@@ -229,14 +230,15 @@
                                align="center"
                                min-width="20%">
                 <template slot-scope="scope">
-                  <el-button type="text"
+                  <el-button type="primary"
                              v-if="scope.$index===(apiForm.headers.length-1)"
                              icon="el-icon-plus"
+                             size="small"
                              @click="addHead">Add header</el-button>
 
-                  <el-button type="text"
+                  <el-button type="danger"
                              icon="el-icon-delete"
-                             class="red"
+                             size="small"
                              @click="delHead(scope.$index)">删除
                   </el-button>
                 </template>
@@ -304,14 +306,15 @@
                                align="center"
                                min-width="20%">
                 <template slot-scope="scope">
-                  <el-button type="text"
+                  <el-button type="primary"
                              v-if="scope.$index===(apiForm.paramars.length-1)"
                              icon="el-icon-plus"
+                             size="small"
                              @click="addParamas">Add parameter</el-button>
 
-                  <el-button type="text"
+                  <el-button type="danger"
                              icon="el-icon-delete"
-                             class="red"
+                             size="small"
                              @click="delParamas(scope.$index)">删除
                   </el-button>
                 </template>

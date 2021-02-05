@@ -1,6 +1,14 @@
 <template> 
-  <div class="app-container">
-    <el-card class="filter-container"
+  <div class="app-container " style="border:">
+<el-row>
+  <el-col :span="3">
+        <div class="left-container" >
+        <el-input clearable size="small" placeholder="分组名称"></el-input>
+         
+    </div>
+  </el-col>
+  <el-col :span="21">
+          <el-card class="filter-container"
              shadow="never">
       <div>
         <i class="el-icon-search"></i>
@@ -11,18 +19,18 @@
                  :model="listQuery"
                  size="small">
           <el-form-item label-width="140px"
-                        label="环境名称：">
+                        label="用例名称：">
             <el-input v-model="listQuery.name"
                       class="input-width"
-                      placeholder="环境名称"
+                      placeholder="用例名称"
                       clearable></el-input>
           </el-form-item>
           <el-form-item label-width="118px"
-                        label="环境使用状态：">
+                        label="用例状态：">
             <el-select v-model="listQuery.status"
                        clearable
                        class="input-width"
-                       placeholder="请选择环境状态 ">
+                       placeholder="请选择用例状态 ">
               <el-option v-for="item in statusOpt"
                          :key="item.status"
                          :label="item.label"
@@ -49,7 +57,7 @@
                  style="float:right;margin-bottom:18px"
                  @click="handleAdd()">添加环境</el-button>
     </el-card>
-    <div class="table-container">
+          <div class="table-container">
       <el-table ref="flashTable"
                 :data="list"
                 style="width: 100%;"
@@ -58,7 +66,7 @@
                 element-loading-background="#fff"
                 v-loading="listLoading"
                 :row-style="{height:'10px'}"
-                stripe>
+                border>
         <el-table-column type="index"
                          label="序号"
                          width="50"
@@ -204,6 +212,10 @@
                    @click="handleDialogConfirm()">确 定</el-button>
       </div>
     </el-dialog>
+  </el-col>
+</el-row>
+
+
   </div>
 </template>
 <script>
@@ -238,7 +250,7 @@ const statusOpt = [
   { status: 2, label: '未禁用' }
 ]
 export default {
-  name: 'flashPromotionList',
+  name: 'caseList',
   data() {
     return {
       listQuery: Object.assign({}, defaultListQuery),
@@ -390,7 +402,7 @@ export default {
           })
           this.getData()
         })
-      }).catch(()=>{})
+      })
     },
     handleUpdate(index, row) {
       this.dialogVisible = true
@@ -460,6 +472,33 @@ export default {
   }
 }
 </script>
-<style></style>
+<style>
+  .el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
+</style>
 
 

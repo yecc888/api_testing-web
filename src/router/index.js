@@ -89,12 +89,6 @@ export const asyncRouterMap = [
         meta: {title: '接口列表', icon: 'product-list'}
       },
 
-    //   {
-    //     path: 'coupon',
-    //     name: 'coupon',
-    //     component: () => import('@/views/api/index'),
-    //     meta: {title: '接口列表', icon: 'sms-coupon'}
-    //   },
       {
         path: 'addApi',
         name: 'addAPI',
@@ -164,6 +158,13 @@ export const asyncRouterMap = [
         name: 'case-list',
         component: () => import('@/views/case/index'),
         meta: {title: '用例列表', icon: 'sms-flash'}
+      },
+      {
+        path: 'addCaseStep/:caseId',
+        name: 'addCaseStep',
+        component: () => import('@/views/case/caseStep'),
+        meta: {title: '添加用例步骤'},
+        hidden:true
       },
     ]
   },

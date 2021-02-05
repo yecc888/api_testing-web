@@ -46,6 +46,16 @@ export function getaCaseGroupList(params) {
     });
   }
   
+  export function getaCaseByGroupId(params) {
+    return request({
+      url: "/getCasesByGroupId/",
+      method: "get",
+      params: params
+    });
+  }
+
+
+
   //新增分组
   export function createCaseGroup(data) {
     return request({
@@ -58,7 +68,7 @@ export function getaCaseGroupList(params) {
   //更新分组
   export function updataCaseGroup(id, data) {
     return request({
-      url: "/api/caseGroup/" + id + "/",
+      url: "/api/updateCaseGroup/" + id + "/",
       method: "put",
       data: data
     });
@@ -71,7 +81,18 @@ export function getaCaseGroupList(params) {
       method: "delete"
     });
   }
-  
+ 
+  //获取所有分组
+  export function getCaseGroups(params) {
+    return request({
+      url: "/api/getCaseGroup/",
+      method: "get",
+      params: params
+    });
+  }
+
+
+
   
 //获取单个接口请求结果历史信息
 export function getApiRespList(params) {

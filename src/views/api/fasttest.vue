@@ -152,10 +152,12 @@
                   <el-button type="primary"
                              v-if="scope.$index===(apiForm.headers.length-1)"
                              icon="el-icon-plus"
+                             size="small"
                              @click="addHead">Add header</el-button>
 
                   <el-button type="danger"
                              icon="el-icon-delete"
+                             size="small"
                              @click="delHead(scope.$index)">删除
                   </el-button>
                 </template>
@@ -227,10 +229,12 @@
                   <el-button type="primary"
                              v-if="scope.$index===(apiForm.paramars.length-1)"
                              icon="el-icon-plus"
+                             size='small'
                              @click="addParamas">Add parameter</el-button>
 
                   <el-button type="danger"
                              icon="el-icon-delete"
+                             size='small'
                              @click="delParamas(scope.$index)">删除
                   </el-button>
                 </template>
